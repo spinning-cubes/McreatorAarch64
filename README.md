@@ -5,7 +5,7 @@
 [![Javadoc](https://img.shields.io/badge/java-doc-%44cc11?style=flat-square)](https://mcreator.github.io/MCreator)
 [![Download](https://img.shields.io/badge/Download-release-%2393c54b?style=flat-square)](https://mcreator.net/download)
 [![Donate](https://img.shields.io/badge/Donate-%E2%99%A1-%23ff7c00?style=flat-square)](https://mcreator.net/donate)
-# MCreator - Minecraft Mod Maker
+# MCreator AARCH64 Edition - Minecraft Mod Maker
 
 <img align="right" width="300" src="https://mcreator.net/image/about/about1.png">
 
