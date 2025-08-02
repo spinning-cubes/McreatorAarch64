@@ -5,8 +5,7 @@
 [![Javadoc](https://img.shields.io/badge/java-doc-%44cc11?style=flat-square)](https://mcreator.github.io/MCreator)
 [![Download](https://img.shields.io/badge/Download-release-%2393c54b?style=flat-square)](https://mcreator.net/download)
 [![Donate](https://img.shields.io/badge/Donate-%E2%99%A1-%23ff7c00?style=flat-square)](https://mcreator.net/donate)
-# MCreator AARCH64 Edition - Minecraft Mod Maker
-
+### Disclaimer: some features don't work yet, i.e. the runClient task, since that depends on a x86 version of LWJGL.
 <img align="right" width="300" src="https://mcreator.net/image/about/about1.png">
 
 https://mcreator.net/ - MCreator is a software used to make Minecraft Java Edition mods, Minecraft Bedrock Edition Add-Ons, and data packs using an intuitive easy-to-learn interface or with an integrated code editor. 
