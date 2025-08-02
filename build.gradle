@@ -13,6 +13,7 @@ plugins {
 
 repositories {
     maven { url = "https://repo.gradle.org/gradle/libs-releases" } // for gradle-tooling-api
+    mavenCentral() // Ensure Maven Central is included for general dependencies including JavaFX
     flatDir { dirs 'lib' }
 }
 
@@ -97,8 +98,9 @@ configurations.macAarch64.attributes {
 configurations.linux64.attributes {
     attribute(Usage.USAGE_ATTRIBUTE, objects.named(Usage, Usage.JAVA_RUNTIME))
     attribute(OperatingSystemFamily.OPERATING_SYSTEM_ATTRIBUTE, objects.named(OperatingSystemFamily, OperatingSystemFamily.LINUX))
-    attribute(MachineArchitecture.ARCHITECTURE_ATTRIBUTE, objects.named(MachineArchitecture, MachineArchitecture.X86_64))
+    attribute(MachineArchitecture.ARCHITECTURE_ATTRIBUTE, objects.named(MachineArchitecture, "aarch64"))
 }
+
 
 dependencies {
     // from lib folder
@@ -150,8 +152,8 @@ dependencies {
 }
 
 javafx {
-    version = '21.0.7'
-    modules = ['javafx.web', 'javafx.swing']
+    version = '21.0.1'
+    modules = ['javafx.web', 'javafx.swing', 'javafx.controls', 'javafx.media', 'javafx.graphics', 'javafx.base']
     configurations = ['provided', 'win64', 'macX64', 'macAarch64', 'linux64']
     // we provide natives during deployment or with SDK
 }
@@ -194,6 +196,9 @@ tasks.register('runMCreator', JavaExec.class) {
     dependsOn jar
 
     jvmArgs '--add-opens', 'java.base/java.lang=ALL-UNNAMED'
+    jvmArgs '--add-exports', 'jdk.jdi/com.sun.jdi=ALL-UNNAMED'
+    jvmArgs '--add-exports', 'jdk.jdi/com.sun.jdi.event=ALL-UNNAMED'
+    jvmArgs '--add-exports', 'jdk.jdi.management/com.sun.jdi.management=ALL-UNNAMED'
 
     classpath += sourceSets.main.runtimeClasspath
 
